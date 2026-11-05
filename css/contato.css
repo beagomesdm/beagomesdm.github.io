@@ -1,0 +1,81 @@
+.contato {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.contato-container {
+  margin-top: 40px;
+}
+
+.logo-svg {
+  margin-top: 40px;
+}
+
+.contato h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  position: relative;
+}
+
+.contato p {
+  margin-top: 15px;
+  font: 1.125rem;
+  font-weight: 300;
+}
+
+.contato h2::before {
+  content: ""; /* sempre dizer que o content nao tem nada, senao ele adiciona coisas ao texto*/
+  display: block;
+  width: 130px; /*defino o tamanho do item */
+  height: 100px; /*defino a altura do item */
+  background: url("../img/detalhe.svg") no-repeat;
+  position: absolute;
+  top: -15px;
+  left: -33px;
+  z-index: -1; /* serve para o item ficar logo atras do texto e nao ficar sobre ele*/
+}
+
+.contato-email {
+  position: relative;
+}
+
+.contato-email p {
+  font-size: 1.13rem;
+}
+
+.contato-email p::before {
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url("../img/icone-email.svg") no-repeat center center;
+  position: absolute;
+  left: -36px;
+}
+
+.contato-telefone p::before {
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url("../img/icone-telefone.svg") no-repeat center center;
+  position: absolute;
+  left: -36px;
+}
+
+@media (max-width: 800px) {
+  .contatos {
+    grid-template-columns: 1fr;
+  }
+  .contato h2 {
+    font-size: 1.13rem;
+  }
+  .contato-email p::before {
+    position: initial;
+    margin-bottom: 10px;
+  }
+}

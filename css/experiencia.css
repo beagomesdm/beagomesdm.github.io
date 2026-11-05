@@ -1,0 +1,96 @@
+.experiencia {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+}
+
+.subtitulo {
+  position: relative;
+}
+
+.experiencia .subtitulo::before {
+  content: ""; /* sempre dizer que o content nao tem nada, senao ele adiciona coisas ao texto*/
+  display: block;
+  width: 73px; /*defino o tamanho do item */
+  height: 5px; /*defino a altura do item */
+  background-color: #fff1d6; /* Põe a cor exata do teu rosa */
+  position: absolute;
+  top: -2px;
+}
+
+.experiencia-texto {
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+}
+
+.empresa-texto {
+  font-weight: 300;
+}
+
+.empresa {
+  padding: 20px;
+  background: #5c3939;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.empresa::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#ffc1c1, #5c3939);
+  position: absolute;
+  top: 20px;
+  left: -5px;
+}
+
+.empresa-titulo {
+  font-size: 1.125rem;
+  margin-bottom: 7px;
+}
+
+.empresa-texto {
+  line-height: 1.4;
+}
+
+.empresa-ano {
+  position: absolute;
+  top: 20px;
+  left: -50px;
+  color: #fff1d691;
+  font-size: 0.875rem;
+}
+
+/* responsivo da experiencia, quando chega a 800px de tela, ele quebra pra uma coluna so */
+@media (max-width: 800px) {
+  .experiencia {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .experiencia-texto {
+    font-size: 1.25rem;
+  }
+  .empresa-ano {
+    position: initial;
+    width: initial;
+    text-align: left;
+  }
+  /* quando diminui pra 800px ele escreve ano antes do numero */
+  .empresa-ano::before {
+    content: "Ano: ";
+  }
+}
+
+@media (max-width: 400px) {
+  .empresa {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,37 @@
+.header {
+  max-width: 1200px; /*tamanho maximo da minha tela para nao crescer infinitamente */
+  padding: 40px 20px;
+  margin: 0 auto;
+  background: #290e0e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+
+.header-menu a {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff1d6;
+  display: block;
+}
+
+/* responsivo: abaixo de 800px ele vai deixar o header em coluna */
+@media (max-width: 800px) {
+  .header {
+    gap: 40px;
+    flex-direction: column;
+  }
+  .header a {
+    background: #fff1d649;
+    border-radius: 5px;
+  }
+}

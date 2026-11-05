@@ -1,0 +1,58 @@
+.introducao {
+  max-width: 1200px; /*nao deixa expandir mais do que o tamanho de conteudo que eu defini*/
+  padding: 40px 20px; /*para nao ficar grudado o conteudo */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 100px;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.introducao h1 {
+  font-family: "BBH Bartle", sans-serif;
+  font-size: 2.5rem;
+  line-height: 60px;
+  margin-bottom: 30px;
+  position: relative; /*digo que o meu h1 tem posicao relativa para poder ter um item abaixo dele*/
+}
+
+.introducao h1::before {
+  content: ""; /* sempre dizer que o content nao tem nada, senao ele adiciona coisas ao texto*/
+  display: block;
+  width: 130px; /*defino o tamanho do item */
+  height: 100px; /*defino a altura do item */
+  background: url("../img/detalhe.svg") no-repeat;
+  position: absolute;
+  top: -15px;
+  left: -33px;
+  z-index: -1; /* serve para o item ficar logo atras do texto e nao ficar sobre ele*/
+}
+
+.introducao p {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 1000px) {
+  /*responsivo para diminuir o h1 quando chegar a 1000px na tela*/
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr; /*a imagem e o texto vao ser proporcionais quando chegar a 800px*/
+    gap: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  /*quando chega a 400px, a coluna vira so uma e a imagem some*/
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
